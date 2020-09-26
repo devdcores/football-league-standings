@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(CountryNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleException(CountryNotFoundException ex){
+    public ResponseEntity<ErrorResponse> handleException(CountryNotFoundException ex) {
 
         ErrorResponse errorResponse = new ErrorResponse();
         Error error = new Error();
@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(LeagueNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleException(LeagueNotFoundException ex){
+    public ResponseEntity<ErrorResponse> handleException(LeagueNotFoundException ex) {
 
         ErrorResponse errorResponse = new ErrorResponse();
         Error error = new Error();
@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(TeamNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleException(TeamNotFoundException ex){
+    public ResponseEntity<ErrorResponse> handleException(TeamNotFoundException ex) {
 
         ErrorResponse errorResponse = new ErrorResponse();
         Error error = new Error();

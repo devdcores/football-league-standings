@@ -15,8 +15,7 @@ public class GetLeagueStandingsController {
     @Autowired
     private GetLeagueStandingsService getLeagueStandingsService;
 
-
-    @GetMapping
+    @GetMapping("/getLeagueStanding")
     public ResponseEntity<GetLeagueStandingsResponse> getLeagueStanding(@RequestParam String countryName,
                                                                         @RequestParam String leagueName,
                                                                         @RequestParam String teamName) {
