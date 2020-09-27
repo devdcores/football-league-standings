@@ -55,9 +55,11 @@ public class GetLeagueStandingsService {
             throw new TeamNotFoundException("Team: " + teamName + ", may not be valid or the team may not belong to League: " + leagueName);
         }
 
+        int teamId = teamsMap.get(teamName);
+
         List<Standings> standings = footballApiFeignClient.getStandings(leagueId, apiKey);
 
-        Optional<Standings> teamPosition = standings.stream().filter(standing -> standing.getTeam_name().equals(teamName)).findFirst();
+        Optional<Standings> teamPosition = standings.stream().filter(standing -> standing.getTeam_id()==teamId).findFirst();
 
         if (teamPosition.isPresent()) {
             Standings standingsResult = teamPosition.get();

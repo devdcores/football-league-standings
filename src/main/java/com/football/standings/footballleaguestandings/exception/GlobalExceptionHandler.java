@@ -47,4 +47,16 @@ public class GlobalExceptionHandler {
         errorResponse.getErrors().add(error);
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ErrorResponse> handleException(RuntimeException ex) {
+
+        ErrorResponse errorResponse = new ErrorResponse();
+        Error error = new Error();
+        error.setField("footballApi");
+        error.setMessage(ex.getMessage());
+
+        errorResponse.getErrors().add(error);
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    }
 }

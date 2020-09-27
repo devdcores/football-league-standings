@@ -1,4 +1,4 @@
-FROM winamd64/openjdk:8-jre
+FROM winamd64/openjdk:8-jre-nanoserver
 
 EXPOSE 8080
 
